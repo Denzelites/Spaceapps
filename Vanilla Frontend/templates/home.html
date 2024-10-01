@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExoExplorer - Discover Exoplanets</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>ExoExplorer</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#exoplanet-info">What Are Exoplanets?</a></li>
+        <li><a href="#project-info">Our Project</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="edu-content">
+    <nav>
+        <ul>
+          <li><a href="visual.html">Data visualizations</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="concepts_overview.html">Concepts</a></li>
+          <li><a href="resources.html">Additional Educational Resources</a></li>
+        </ul>
+      </nav>
+  </section>
+  <!-- Hero Section -->
+  <section class="bg-black" id="home">
+    <h2>Explore the Wonders of Exoplanets</h2>
+    <p>Join us on a journey to explore distant worlds beyond our solar system.</p>
+    <a href="#exoplanet-info">Learn More</a>
+  </section>
+
+  <!-- What Are Exoplanets Section -->
+  <section id="exoplanet-info">
+    <h2>What Are Exoplanets?</h2>
+    <p>Exoplanets are planets that orbit stars outside our solar system. Some may even be habitable, making them the focus of scientific research.</p>
+    <p>Discover the fascinating characteristics of these distant worlds and how they are detected through advanced space missions.</p>
+  </section>
+
+  <!-- Our Project Section -->
+  <section id="project-info">
+    <h2>What is ExoExplorer?</h2>
+    <p>ExoExplorer is an interactive platform that allows students and enthusiasts to learn about exoplanets through visualizations, data insights, and fun activities.</p>
+    <p>Our mission is to spark curiosity about space exploration and provide accessible learning tools for everyone.</p>
+  </section>
+
+  <!-- Exoplanet Gallery Section -->
+  <section id="gallery">
+    <h2>Exoplanet Gallery</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Exoplanet Slide 1 -->
+        <div class="swiper-slide">
+          <img src="planet1.jpg" alt="Exoplanet 1" onclick="openPlanetPage('planet1')">
+        </div>
+        <!-- Exoplanet Slide 2 -->
+        <div class="swiper-slide">
+          <img src="planet2.jpg" alt="Exoplanet 2" onclick="openPlanetPage('planet2')">
+        </div>
+        <!-- Add more slides as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 ExoExplorer. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
