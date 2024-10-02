@@ -6,6 +6,21 @@
   <title>Data Visualization</title>
   <link rel="stylesheet" href="../styles/visual.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    #visualization-area svg {
+  background-color: #333;
+}
+
+circle {
+  fill: #1e90ff;
+  stroke: #fff;
+}
+
+text {
+  fill: #fff;
+}
+
+  </style>
 </head>
 <body>
   <!-- Header Section -->
@@ -16,7 +31,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="visual.html">Data Visualizations</a></li>
         <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="concepts_overview.html">Concepts</a></li>
         <li><a href="resources.html">Educational Resources</a></li>
       </ul>
     </nav>
@@ -28,7 +43,7 @@
       <ul>
         <li><a href="visual.html">Data visualizations</a></li>
         <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="concepts_overview.html">Concepts</a></li>
         <li><a href="resources.html">Additional Educational Resources</a></li>
       </ul>
     </nav>
@@ -36,7 +51,6 @@
 
   <!-- Main Content Section -->
   <section id="data-visualization">
-    <h2>Choose Your Visualization</h2>
     
     <div class="dropdown-container">
       <!-- Dropdown A for selecting visualization techniques -->
@@ -72,6 +86,7 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <script src="../js/script.js"></script>
+  <script id="visual"></script>
 </body>
 </html>

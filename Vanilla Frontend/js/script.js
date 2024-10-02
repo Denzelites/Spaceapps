@@ -3,8 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('#visualization-options a').forEach(option => {
     option.addEventListener('click', function(e) {
       e.preventDefault();
-      const visualizationType = this.textContent;
-      alert(`Selected Visualization: ${visualizationType}`);
+      const visualjs=document.querySelector('#visual');
+      const jsstring = this.textContent.toLowerCase().replace(" ", "");;
+      visualjs.setAttribute("src", `../js/${jsstring}.js`)
+      
+      alert(`Selected Visualization: ${jsstring}`);
       // Here we will call the function to generate the appropriate D3.js visualization
     });
   });

@@ -35,7 +35,7 @@ header, nav ul, #edu-content nav ul {
   /* Dropdown Container */
   .dropdown-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 20px;
   }
   
@@ -87,12 +87,12 @@ header, nav ul, #edu-content nav ul {
   #visualization-area {
     margin-top: 40px;
     padding: 20px;
-    width: 80%;
+    width: 300%;
     margin: auto;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     min-height: 300px;
   }
+
   body{
-    background-color: rgb(69, 59, 59);
+    background-image: url("../img/space-wallpapers.jpg");
   }
-  
