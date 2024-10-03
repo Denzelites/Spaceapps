@@ -1,0 +1,32 @@
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+
+@layer components{
+    .navbar{
+        @apply h-20 col-span-12 w-full bg-[#4f97ce] bg-gradient-to-r from-cyan-500 to-blue-500 flex
+        flex-row justify-evenly absolute
+    }
+    .navbar h2{
+        @apply p-4 font-bold text-[24px]
+    }
+    .navbar li{
+        @apply p-4 text-[20px] font-semibold text-[#1a171d]
+    }
+
+    .header-container{
+        @apply col-span-12 flex flex-col flex-auto items-center justify-evenly h-[100vh]
+    }
+
+    .header-container h2{
+        @apply text-white font-bold text-[56px] 
+    }
+
+    .header-container p{
+        @apply text-[#b9edf79f] font-semibold text-[24px] 
+    }
+
+    .carousel-container{
+        @apply col-start-3 col-span-8 m-3
+    }
+}
