@@ -5,9 +5,9 @@
 
   // Array of slide content (you can replace with actual content later)
   const slides = [
-    {'img':'carousel-1.jpg', 'text':'Demystify exoplanets and understand what makes them so exiting', "arrow":"right-arrow.png"},
-    {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit', "arrow":"right-arrow.png"},
-    {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit', "arrow":"right-arrow.png"},
+    {'img':'carousel-1.jpg', 'text':'Demystify exoplanets and understand what makes them so exiting', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
+    {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
+    {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
   ];
   let noOfSlides = slides.length
 
@@ -51,12 +51,12 @@
 
 
 <div class="carousel-inner" style="transform: translateX({-currentIndex * (100/noOfSlides)}%); width: {noOfSlides * 100}%">
-  {#each slides as { img, text, arrow }}
+  {#each slides as { img, text, arrow, link_text, link }}
     <div class="carousel-item">
       <img class='carol-img' src={img} alt='carousel'/>
       <div class="info-col">
         <p class="text-white">{text}</p>
-        <button class='carol-btn'>Click to explore</button>
+        <button class='carol-btn'><a href={link}>{link_text}</a></button>
         <div class="right-arrow"><img on:keydown on:click={()=>scrollCarousel(-1)} src={arrow} alt='right arrow'/></div>
         <div class="left-arrow"><img on:keydown on:click={()=>scrollCarousel(1)} src={arrow} alt='left arrow'/></div>
       </div>
