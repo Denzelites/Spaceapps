@@ -11,11 +11,11 @@
     </div>
 </header>
 
-<!-- <section class='carousel-container'>
+<section class='carousel-container'>
     <div>
         <Carousel/>
     </div>
-</section> -->
+</section>
 
 
 

@@ -5,7 +5,7 @@
 @layer components{
     .navbar{
         @apply h-20 col-span-12 w-full bg-[#4f97ce] bg-gradient-to-r from-cyan-500 to-blue-500 flex
-        flex-row justify-evenly absolute
+        flex-row justify-evenly
     }
     .navbar h2{
         @apply p-4 font-bold text-[24px]
@@ -28,5 +28,9 @@
 
     .carousel-container{
         @apply col-start-3 col-span-8 m-3
+    }
+
+    .visualization-container{
+        @apply col-span-12 h-[100vh] bg-black
     }
 }

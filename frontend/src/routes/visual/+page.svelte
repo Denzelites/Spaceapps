@@ -1,6 +1,18 @@
-<p >welcome to visualizations</p>
+<script>
 
-<!-- <script>
+</script>
+
+<section class='visualization-container'>
+  <p class='text-white'>Welcome to visualizations</p>
+  <p class='text-white'>Welcome to visualizations</p>
+  <p class='text-white'>Welcome to visualizations</p>
+  <p class='text-white'>Welcome to visualizations</p>
+  <p class='text-white'>Welcome to visualizations</p>
+  <p class='text-white'>Welcome to visualizations</p>
+  <p class='text-white'>Welcome to visualizations</p> 
+</section>
+<!---
+ <script>
 #visualization-area svg {
   background-color: #333;
 }

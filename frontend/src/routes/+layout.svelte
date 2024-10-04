@@ -1,5 +1,5 @@
 <script lang='ts' >
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import * as THREE from 'three'
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
   import '../styles/app.css'
@@ -13,7 +13,7 @@
   let planets: Array<Object>
   
   onMount(async ()=>{
-    const {mercury: mercuryObject, scene: ScenePlanets, planets: Planets} = await import('./3d/solar')
+    const {mercury: mercuryObject, scene: ScenePlanets, planets: Planets} = await import('./context/solar')
     mercury = mercuryObject
     planets = Planets
 
@@ -21,17 +21,17 @@
   //setting up the scene
   scene = ScenePlanets
   //setting up the camera
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   //setting up the renderer
-  const renderer = new THREE.WebGLRenderer({
+  let renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg')
   })
 
   renderer.setPixelRatio( window.devicePixelRatio )
   renderer.setSize( window.innerWidth, window.innerHeight );
-  camera.position.set(-90, 140, 100);
+  camera.position.set(-90, 20, 140); //y to 140 for overhead view
   //setting up the materials
-  const sunTexture = new THREE.TextureLoader().load('/textures/8k_sun.jpg')
+  const sunTexture = new THREE.TextureLoader().load('/textures/2k_sun.jpg')
   const sunNormalTexture = new THREE.TextureLoader().load('/textures/normal.jpg')
   const sun = new THREE.Mesh(
     new THREE.SphereGeometry(16,30,30),
@@ -40,8 +40,6 @@
   ); scene.add(sun);
   //light sources
   const pointLight = new THREE.PointLight(0xFFFFFF)
-  // console.log(sun.position.x,sun.position.y,sun.position.z)
-  pointLight.position.set(sun.position.x, sun.position.y, sun.position.z)
   const ambientLight = new THREE.AmbientLight(0x333333);
   
   scene.add(pointLight); scene.add(ambientLight)
@@ -88,18 +86,32 @@
 
   // scene.background = spaceTexture
   animate()
-})
 
+  onDestroy(() => {
+      // Stop animations or event listeners
+      // Remove objects from the scene and dispose of geometries/materials
+      scene.remove(sun)
+      planets.map(({mesh, obj})=>{scene.remove(mesh, obj)})
+      // Dispose renderer
+      renderer.dispose();
+
+      // Optionally remove references
+      scene = null;
+      renderer = null;
+      camera = null;
+    });
+})
 
 </script>
 
 <canvas bind:this={canvas} id="bg"></canvas>
-<!-- <main>
+
+<main>
   <Navbar />
   <slot>
 
   </slot>
-</main> -->
+</main>
 
 <style>
 
