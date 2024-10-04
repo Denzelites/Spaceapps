@@ -33,4 +33,9 @@
     .visualization-container{
         @apply col-span-12 h-[100vh] bg-black
     }
+
+    .explore-nav{
+        @apply h-full w-60 shadow-lg rounded-sm shadow-[#413f3f] col-span-3 row-start-6 row-span-full bg-[#abd] text-black
+        p-4 bg-gradient-to-tr from-blue-500 via-teal-600 to-emerald-300 
+    }
 }

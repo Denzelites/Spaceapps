@@ -6,7 +6,7 @@
 
   <ul class='flex flex-1 flex-row justify-between ml-[22rem]'>
     <li><a href="/">Home</a></li>
-    <li><a href="#exoplanet-info">Explore</a></li>
+    <li><a href="/explore">Explore</a></li>
     <li><a href="/visual">Visualize</a></li>
     <li><a href="#gallery">Meet the team</a></li>
   </ul>

@@ -4,24 +4,23 @@
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
   import '../styles/app.css'
 	import Navbar from './components/navbar.svelte';
+  import { cameraStore, initCamera, sceneStore, planetsStore,rendererStore } from './context/store';
   
   
-  let canvas;
-  //planets
-  let mercury;
-  let scene;
-  let planets: Array<Object>
-  
-  onMount(async ()=>{
-    const {mercury: mercuryObject, scene: ScenePlanets, planets: Planets} = await import('./context/solar')
-    mercury = mercuryObject
-    planets = Planets
+  export let canvas;
+  let galaxy: object
+  let camera: THREE.PerspectiveCamera;
 
-  const spaceTexture = new THREE.TextureLoader().load('space-bg.jpg')
+onMount(async ()=>{
+  const{Planets: Planets, Scene: Scenery} = await import('./context/solar')
+  let planets = Planets
+  initCamera(); // Initialize camera on the client
+  cameraStore.subscribe(value => {
+    camera = value;
+  });
+  
   //setting up the scene
-  scene = ScenePlanets
-  //setting up the camera
-  let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  let scene = Scenery
   //setting up the renderer
   let renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg')
@@ -29,7 +28,7 @@
 
   renderer.setPixelRatio( window.devicePixelRatio )
   renderer.setSize( window.innerWidth, window.innerHeight );
-  camera.position.set(-90, 20, 140); //y to 140 for overhead view
+  
   //setting up the materials
   const sunTexture = new THREE.TextureLoader().load('/textures/2k_sun.jpg')
   const sunNormalTexture = new THREE.TextureLoader().load('/textures/normal.jpg')
@@ -38,14 +37,10 @@
     new THREE.MeshStandardMaterial({map: sunTexture, normalMap: sunNormalTexture}),
 
   ); scene.add(sun);
-  //light sources
-  const pointLight = new THREE.PointLight(0xFFFFFF)
-  const ambientLight = new THREE.AmbientLight(0x333333);
-  
-  scene.add(pointLight); scene.add(ambientLight)
+
 
   const controls = new OrbitControls(camera, renderer.domElement)
-  
+
   function animate(){
     requestAnimationFrame( animate );
     renderer.render(scene, camera)
@@ -82,16 +77,19 @@
   }
     scene.add(star)
   }
-  Array(100).fill().forEach(addStar)
 
-  // scene.background = spaceTexture
+  Array(100).fill().forEach(addStar)
   animate()
+  sceneStore.set(scene)
+  planetsStore.set(planets)
+  rendererStore.set(render)
+
 
   onDestroy(() => {
       // Stop animations or event listeners
       // Remove objects from the scene and dispose of geometries/materials
       scene.remove(sun)
-      planets.map(({mesh, obj})=>{scene.remove(mesh, obj)})
+      planets.forEach(({mesh, obj})=>{scene.remove(mesh, obj)})
       // Dispose renderer
       renderer.dispose();
 
@@ -108,7 +106,7 @@
 
 <main>
   <Navbar />
-  <slot>
+  <slot {canvas}>
 
   </slot>
 </main>
