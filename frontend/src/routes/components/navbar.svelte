@@ -1,13 +1,16 @@
-<nav class='navbar'>
-  <div class='flex justify-between flex-row'>
-    <h2>ExoExplorer</h2>
-    <img src='logo.jpeg' alt='exo logo' height=100 width=100/>
+<nav class='navbar flex justify-between items-center'>
+  <div class='left-nav-sec flex items-center'>
+    <div class="logo">
+      <img src='logo.jpeg' alt='exo logo'/>
+    </div>
+    <h2>EduExo</h2>
   </div>
 
-  <ul class='flex flex-1 flex-row justify-between ml-[22rem]'>
+  <ul class='flex items-center gap-4'>
     <li><a href="/">Home</a></li>
     <li><a href="/explore">Explore</a></li>
-    <li><a href="/visual">Visualize</a></li>
+    <li><a href="/concepts">Concepts</a></li>
+    <li><a href="/visual">Visualization</a></li>
     <li><a href="#gallery">Meet the team</a></li>
   </ul>
 </nav>

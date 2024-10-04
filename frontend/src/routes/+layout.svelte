@@ -13,7 +13,8 @@
 
 onMount(async ()=>{
   const{Planets: Planets, Scene: Scenery} = await import('./context/solar')
-  let planets = Planets
+  planetsStore.set(Planets)
+  let planets = $planetsStore
   initCamera(); // Initialize camera on the client
   cameraStore.subscribe(value => {
     camera = value;
@@ -31,10 +32,10 @@ onMount(async ()=>{
   
   //setting up the materials
   const sunTexture = new THREE.TextureLoader().load('/textures/2k_sun.jpg')
-  const sunNormalTexture = new THREE.TextureLoader().load('/textures/normal.jpg')
+  // const sunNormalTexture = new THREE.TextureLoader().load('/textures/normal.jpg')
   const sun = new THREE.Mesh(
     new THREE.SphereGeometry(16,30,30),
-    new THREE.MeshStandardMaterial({map: sunTexture, normalMap: sunNormalTexture}),
+    new THREE.MeshStandardMaterial({map: sunTexture}),
 
   ); scene.add(sun);
 
@@ -67,7 +68,7 @@ onMount(async ()=>{
   const scale = THREE.MathUtils.randFloat(0.5, 1.5);
   star.scale.set(scale, scale, scale);
 
-    const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(400))
+    const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(200))
     star.position.set(x, y, z)
 
     if (Math.random() > 0.7) {  // 10% chance to add a light for brighter stars
@@ -81,7 +82,6 @@ onMount(async ()=>{
   Array(100).fill().forEach(addStar)
   animate()
   sceneStore.set(scene)
-  planetsStore.set(planets)
   rendererStore.set(render)
 
 
@@ -99,7 +99,6 @@ onMount(async ()=>{
       camera = null;
     });
 })
-
 </script>
 
 <canvas bind:this={canvas} id="bg"></canvas>
@@ -112,26 +111,28 @@ onMount(async ()=>{
 </main>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-  *{
-    /* border: solid; */
-    border: solid 1px red,
-  }
-  canvas{
-    position: fixed;
-    top: 0;
-    left: 0;
+*{
+  /* border: solid 1px red, */
+}
+canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
 
-  }
+}
 
-  main{
-    position: absolute;
-    z-index: 99;
-    margin: 0px auto;
-    width: 100%;
+main{
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  position: relative;
+  z-index: 99;
+  margin: 100px auto 0px;
+  width: 100vw;
 
-
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-  }
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding-bottom: 20px;
+  row-gap: 300px;
+}
 </style>

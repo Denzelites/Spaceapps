@@ -32,12 +32,19 @@ export const neptune = createPlanet('neptune',7, textureloader.load('/textures/2
 
 export const Planets = [mercury, venus, earth, mars,  jupiter, saturn, uranus, neptune]
 
-const pointLight = new THREE.PointLight(0xFFFFFF, 80, 700)
-pointLight.position.set(20,20,20)
+const pointLight = new THREE.PointLight(0xFFFFFF, 900, 1000)
 pointLight.castShadow = true;
 Planets.forEach(({mesh})=>{mesh.castShadow = true})
 const ambientLight = new THREE.AmbientLight(0x333333);
 
 Scene.add(pointLight); Scene.add(ambientLight)
-const spaceTexture = new THREE.TextureLoader().load('space-bg.jpg')
-// Scene.background = spaceTexture
+const cubeTextureLoader = new THREE.CubeTextureLoader();
+const starsTexture = '/textures/8k_stars.jpg'
+Scene.background = cubeTextureLoader.load([
+    starsTexture,
+    starsTexture,
+    starsTexture,
+    starsTexture,
+    starsTexture,
+    starsTexture
+])

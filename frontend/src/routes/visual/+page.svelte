@@ -2,14 +2,8 @@
 
 </script>
 
-<section class='visualization-container'>
-  <p class='text-white'>Welcome to visualizations</p>
-  <p class='text-white'>Welcome to visualizations</p>
-  <p class='text-white'>Welcome to visualizations</p>
-  <p class='text-white'>Welcome to visualizations</p>
-  <p class='text-white'>Welcome to visualizations</p>
-  <p class='text-white'>Welcome to visualizations</p>
-  <p class='text-white'>Welcome to visualizations</p> 
+<section class='visualization-container bg-black'>
+
 </section>
 <!---
  <script>

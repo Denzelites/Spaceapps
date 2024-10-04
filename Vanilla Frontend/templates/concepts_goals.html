@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concepts | Exoplanet Exploration</title>
   <link rel="stylesheet" href="../styles/concepts.css">
+  <link rel="stylesheet" href="../styles/chat.css">
 </head>
 <body>
   <!-- Header -->
@@ -51,6 +52,17 @@
       <h1>Brief Overview</h1>
       <p>This is a placeholder for the Brief Overview content. You can fill this section with detailed information.</p>
     </main>
+  </div>
+   <!-- Chatbot Panel (Initially hidden) -->
+ <div id="chatbot-panel" class="hidden">
+  <div class="chatbot-header">
+      <h2>Ask Bot</h2>
+      <button id="close-chatbot">X</button>
+  </div>
+  <div class="chatbot-body">
+      <p>Hello, I'm here to help with your questions.</p>
+      <input type="text" placeholder="Ask a question" id="chat-input">
+      <button id="send-button">Send</button>
   </div>
 
   <script src="scripts.js"></script>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Quiz</title>
+    <style>
+        /* Same styles as before */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1e29;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #2d2f3c;
+            padding: 20px;
+            border-radius: 10px;
+            width: 600px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .slider-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .slider-container input[type=range] {
+            width: 70%;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            background-color: #3b3e52;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .options li:hover {
+            background-color: #4d4f67;
+        }
+        .options li.correct::after {
+            content: '✓';
+            color: green;
+            margin-left: auto;
+        }
+        .options li.wrong::after {
+            content: '✗';
+            color: red;
+            margin-left: auto;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .navigation button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .navigation button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Exoplanet Quiz</h1>
+
+        <!-- Slider bar for selecting number of questions -->
+        <div class="slider-container">
+            <label for="numQuestions">Select Questions (3-5):</label>
+            <input type="range" id="numQuestions" name="numQuestions" min="3" max="5" value="3" onchange="setNumberOfQuestions()">
+            <span id="questionCount">3</span>
+        </div>
+
+        <!-- Question container -->
+        <div id="quiz-container">
+            <div class="question">
+                <p id="questionText"></p>
+            </div>
+
+            <ul class="options">
+                <li id="option1" data-option="1"></li>
+                <li id="option2" data-option="2"></li>
+                <li id="option3" data-option="3"></li>
+            </ul>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="navigation">
+            <button id="prevBtn" onclick="prevQuestion()">Previous</button>
+            <button id="nextBtn" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+    <script type="module" src="../js/quiz.js"></script>
+    </script>
+
+</body>
+</html>

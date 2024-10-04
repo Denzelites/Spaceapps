@@ -1,124 +1,165 @@
-<script>
-    import { onDestroy } from "svelte";
-    let currentIndex = 0;
-    const totalSlides = 3;
-  
-    // Array of slide content (you can replace with actual content later)
-    const slides = [
-      {'img':'carousel-1.jpg', 'text':'Discover and learn more about the planets in our solar system'},
-      {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit'},
-      {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit'},
-    ];
-    let noOfSlides = slides.length
-  
-    // Change slide based on index
-    function goToSlide(index) {
-      currentIndex = index;
+<script lang="ts">
+  import { onDestroy } from "svelte";
+  let currentIndex = 0;
+  const totalSlides = 3;
+
+  // Array of slide content (you can replace with actual content later)
+  const slides = [
+    {'img':'carousel-1.jpg', 'text':'Demystify exoplanets and understand what makes them so exiting', "arrow":"right-arrow.png"},
+    {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit', "arrow":"right-arrow.png"},
+    {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit', "arrow":"right-arrow.png"},
+  ];
+  let noOfSlides = slides.length
+
+  // Change slide based on index
+  function goToSlide(index) {
+    currentIndex = index;
+  }
+
+  const scrollCarousel = (arrow: number) =>{
+    // console.log(arrow)
+    if(arrow == 1){
+      currentIndex = (currentIndex + 1) % totalSlides;
+      console.log(currentIndex)
+    } else if(arrow == -1){
+      if(currentIndex == 0){
+        currentIndex = 3
+      }
+      currentIndex = (currentIndex - 1) % totalSlides;
+      console.log(currentIndex)
     }
-  
-    // Auto-advance every 5 seconds
-    // const interval = setInterval(() => {
-    //   currentIndex = (currentIndex + 1) % totalSlides;
-    // }, 5000);
-  
-    // // Cleanup interval on component destroy
-    // onDestroy(() => {
-    //   clearInterval(interval);
-    // });
-  </script>
+    clearInterval(interval);
+  }
+
+  // Auto-advance every 5 seconds
+  const interval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+  }, 5000);
+
+  // Cleanup interval on component destroy
+  onDestroy(() => {
+    clearInterval(interval);
+  });
+</script>
 
 <div class="carousel">
-  <div class='carousel-head text-red-700'>
-    <h3>
-      Top picks
-    </h3>
-  </div>
-  
+<!-- <div class='carousel-head text-red-700'>
+  <h3>
+    Top picks
+  </h3>
+</div> -->
 
-  <div class="carousel-inner" style="transform: translateX({-currentIndex * (100/noOfSlides)}%); width: {noOfSlides * 100}%">
-    {#each slides as { img, text }}
-      <div class="carousel-item">
-        <img class='carol-img' src={img} alt='carousel'/>
-        <div class='col-start-4'>
-          <p>{text}</p>
-          <button class='carol-btn'>Click to explore</button>
-        </div>
+
+<div class="carousel-inner" style="transform: translateX({-currentIndex * (100/noOfSlides)}%); width: {noOfSlides * 100}%">
+  {#each slides as { img, text, arrow }}
+    <div class="carousel-item">
+      <img class='carol-img' src={img} alt='carousel'/>
+      <div class="info-col">
+        <p class="text-white">{text}</p>
+        <button class='carol-btn'>Click to explore</button>
+        <div class="right-arrow"><img on:keydown on:click={()=>scrollCarousel(-1)} src={arrow} alt='right arrow'/></div>
+        <div class="left-arrow"><img on:keydown on:click={()=>scrollCarousel(1)} src={arrow} alt='left arrow'/></div>
       </div>
-    {/each}
-  </div>
+    </div>
+  {/each}
+</div>
 
-  <!-- Carousel Indicators -->
-  <div class="carousel-indicators">
-    {#each Array(totalSlides) as _, index}
-      <span 
-        class="indicator {index === currentIndex ? 'active' : ''}" 
-        on:click={() => goToSlide(index)} on:keypress>
-      </span>
-    {/each}
-  </div>
+<!-- Carousel Indicators -->
+<div class="carousel-indicators">
+  {#each Array(totalSlides) as _, index}
+    <span 
+      class="indicator {index === currentIndex ? 'active' : ''}" 
+      on:click={() => goToSlide(index)} on:keypress>
+    </span>
+  {/each}
+</div>
 
 </div>
-  
-  <style>
+
+<style>
 .carousel {
-    width: 100%;
-    height: 400px; /* Adjust height as necessary */
-    position: relative;
-    overflow: hidden;
-  }
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
-  .carousel-inner {
-    display: flex;
-    height: 100%; /* Fill the carousel height */
-    transition: transform 0.5s ease;
-    will-change: transform; /* Improve performance */
-  }
+.carousel-inner {
+  display: flex;
+  height: 100%; /* Fill the carousel height */
+  transition: transform 0.5s ease;
+  will-change: transform; /* Improve performance */
+}
 
-  .carousel-item {
-    width: 100%; 
-    height: 100%; /* Fill the carousel height */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
-    justify-items: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    background-color: #f0f0f0;
-    padding: 0.5em; /* Space around the content */
-  }
 
-  .carol-img {
-    grid-column: 1 / span 2; /* Take up two columns */
-    max-height: 100%; /* Ensure image does not overflow */
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
-  }
+.carousel-item {
+  background-color: rgba(255, 255, 255, 0.251);
+  backdrop-filter: blur(15px);
+  padding: 0.5rem 0.5rem 2.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap:1.5rem;
+  border-radius:5px
+}
 
-  .carousel-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-  }
+.carol-img {
+  border-radius:5px 5px 0 0;
+  max-width: 100%; /* Ensure image does not overflow */
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+  height: 70%;
+}
+.info-col{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap:10px;
+position: relative;
+}
+.info-col > .right-arrow{
+position: absolute;
+left:0;
+cursor: pointer;
+width:40px;
+transform: rotateY(180deg);
+}
+.info-col > .left-arrow{
+position: absolute;
+right:0;
+cursor: pointer;
+width:40px;
 
-  .indicator {
-    width: 10px;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+}
+.info-col div img{
+width:100%
 
-  .indicator.active {
-    background-color: #333;
-  }
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
 
-    .carol-btn{
-        border: solid 1px rgb(93, 174, 194);
-        background-color: rgb(93, 174, 194);
-        color: #fefefe;
-        padding: 2px;
-        font-size: 14px;
-        border-radius: 25px  25px;
-    }
-  </style> 
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #333;
+}
+
+  .carol-btn{
+     @apply bg-blue-500;
+      color: #fefefe;
+      padding: .5rem;
+      font-size: 14px;
+      border-radius: 5px;
+  }
+</style> 

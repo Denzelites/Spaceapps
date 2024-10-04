@@ -3,39 +3,91 @@
 @tailwind base;
 
 @layer components{
-    .navbar{
-        @apply h-20 col-span-12 w-full bg-[#4f97ce] bg-gradient-to-r from-cyan-500 to-blue-500 flex
-        flex-row justify-evenly
-    }
-    .navbar h2{
-        @apply p-4 font-bold text-[24px]
-    }
-    .navbar li{
-        @apply p-4 text-[20px] font-semibold text-[#1a171d]
+    body {
+        overflow-x: hidden;
+
     }
 
-    .header-container{
-        @apply col-span-12 flex flex-col flex-auto items-center justify-evenly h-[100vh]
+    .navbar {
+        @apply h-16 col-span-12 w-full flex items-center justify-evenly text-white
     }
 
-    .header-container h2{
-        @apply text-white font-bold text-[56px] 
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(30px);
+        /* background-color: none; */
+        position: fixed;
+        top: 0;
     }
 
-    .header-container p{
-        @apply text-[#b9edf79f] font-semibold text-[24px] 
+    .logo {
+        height: 100%;
     }
 
-    .carousel-container{
+    .logo img {
+        height: 100%;
+        /* width: 100%; */
+    }
+    
+    .left-nav-sec {
+        height: 100%;
+    }
+
+    ul>* {
+        @apply hover:text-blue-500 hover:transition-colors
+    }
+
+    ul>* {
+        @apply hover:text-blue-500 hover:transition-colors
+    }
+
+    .navbar h2 {
+        @apply p-4 text-[32px]
+    }
+
+    .navbar li {
+        @apply p-4 text-[18px];
+        width: fit-content;
+    }
+
+    .header-container {
+        @apply col-span-12 flex flex-col items-start ml-16 gap-4;
+        padding-top: 8.5rem;
+        text-align: left;
+    }
+
+    .header-container h2 {
+        @apply text-white text-[56px]
+    }
+
+    .header-container p {
+        @apply text-blue-500 text-[24px]
+    }
+
+
+    .carousel-container {
         @apply col-start-3 col-span-8 m-3
     }
 
-    .visualization-container{
-        @apply col-span-12 h-[100vh] bg-black
+    .explore-container{
+        @apply overflow-y-hidden
     }
 
     .explore-nav{
-        @apply h-full w-60 shadow-lg rounded-sm shadow-[#413f3f] col-span-3 row-start-6 row-span-full bg-[#abd] text-black
-        p-4 bg-gradient-to-tr from-blue-500 via-teal-600 to-emerald-300 
+        @apply h-[500px] w-60 shadow-lg rounded-sm shadow-[#413f3f] col-span-3 row-start-2 row-span-full bg-[#abd] text-black
+        p-4 bg-gradient-to-tr from-blue-500 via-teal-600 to-emerald-300 overflow-y-auto
+    }
+
+    .explain-nav{
+        @apply col-start-11 col-span-2 row-start-2 bg-gradient-to-br from-black to-white
+    } 
+
+    /* pages containerrs */
+    .visualization-container{
+        @apply col-span-12 min-h-[calc(100vh-20px)] bg-black w-full
+    }
+
+    .concepts-container{
+        @apply col-span-full min-h-[calc(100vh-20px)] bg-white w-full
     }
 }
