@@ -40,8 +40,10 @@
     if (camera.parent){
       camera.removeFromParent()
     }
+
     const offsetRadius = planet.mesh.geometry.parameters.radius
     const targetPosition = planet.mesh.position.clone().add(new THREE.Vector3(-((7.1*offsetRadius)-7/offsetRadius), (1.1*offsetRadius), 10+offsetRadius));
+    
     gsap.to(camera.position, {
       duration: 1,
       x: targetPosition.x,
