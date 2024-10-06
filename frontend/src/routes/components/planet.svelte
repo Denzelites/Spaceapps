@@ -2,13 +2,14 @@
     import { createEventDispatcher } from "svelte";
     let dispatch = createEventDispatcher()
     export let planet
+    export let index: number;
 
     const focusPlanet = (planet: [])=>{
-        dispatch('focus',{'planet':planet})
+        dispatch('focus',{'planet':planet, 'index':index})
     }
 
     const generateColor = (planet) =>{
-        console.log(planet)
+        // console.log(planet)
     }
     generateColor(planet)
 </script>

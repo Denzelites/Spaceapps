@@ -1,8 +1,16 @@
-<script>
+<script lang='ts'>
+  let chatbotbtn;
+  import { createEventDispatcher } from "svelte";
+  let dispatch = createEventDispatcher()
 
+  let hidden: Boolean = true
+
+  const toggle = ()=>{
+    dispatch('toggleChat',
+    {'hidden':hidden})
+  }
 </script>
 
-<div class="content-container">
     <aside class="sidebar">
         <ul>
             <li><a href="/concepts/overview">Brief Overview</a></li>
@@ -14,7 +22,7 @@
         </ul>
     </aside>
     
-    <div id="chatbot-button">
+    <div id="chatbot-button" bind:this={chatbotbtn} on:click={toggle}>
 
         <div class="chatbot-text">
             <p>May I help you?</p>
@@ -22,7 +30,7 @@
         </div>
     </div>
     
-</div>
+
 
 <style>
     

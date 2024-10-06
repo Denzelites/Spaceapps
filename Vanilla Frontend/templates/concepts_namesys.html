@@ -1,5 +1,54 @@
-
-<div class="container">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concepts-Overview | Exoplanet Exploration</title>
+    <link rel="stylesheet" href="../styles/concepts.css">
+    <link rel="stylesheet" href="../styles/chat.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">ExoExplore</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="visual.html">Data Visualizations</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="concepts.html" class="active">Concepts</a></li>
+          <li><a href="resources.html">Additional Resources</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <!-- Edu-content Section -->
+    <section id="edu-content">
+      <nav>
+        <ul>
+          <li><a href="visual.html">Data visualizations</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="concepts.html">Concepts</a></li>
+          <li><a href="resources.html">Additional Educational Resources</a></li>
+        </ul>
+      </nav>
+    </section>
+  
+    <!-- Main Content with Sidebar -->
+    <div class="content-container">
+      <aside class="sidebar">
+        <ul>
+          <li><a href="concepts_overview.html">Brief Overview</a></li>
+          <li><a href="concepts_types.html">Types of Exoplanets</a></li>
+          <li><a href="concepts_namesys.html">Naming Systems</a></li>
+          <li><a href="concepts_discovery.html">Methods of Discovering Exoplanets</a></li>
+          <li><a href="concepts_timeline.html">Timeline & Important Discoveries</a></li>
+          <li><a href="concepts_goals.html">NASA's Goals</a></li>
+        </ul>
+      </aside>
+  
+      <!-- Placeholder content for each concept -->
+      <div class="container">
         <h1>Exoplanet Naming Systems</h1>
         <p>Exoplanets, planets outside our solar system, are given names based on structured naming conventions. Two main naming systems are used:</p>
 
@@ -31,3 +80,47 @@
     </div>
   </div>
 
+     <a href="quiz.html?title=overview"" class="quiz-button]">Take a quiz</a>
+  
+       <!-- Chatbot Button -->
+       <div id="chatbot-button">
+        <div class="chatbot-text">
+            <p>May I help you?</p>
+            <span>Hi there! I'm here to help you.</span>
+        </div>
+    </div>
+    </div>
+  
+    <!-- Optional Background overlay when chatbot is open -->
+    <div id="overlay" class="hidden"></div>
+    </div>
+  
+   <!-- Chatbot Panel (Initially hidden) -->
+   <div id="chatbot-panel" class="hidden">
+    <div class="chatbot-header">
+        <h2>Ask ExoExplorer Bot</h2>
+        <button id="close-chatbot">X</button>
+    </div>
+    <div class="chatbot-body">
+      <div id="chat-output">
+        <p>Hello, I'm here to help with your questions.</p>
+          <!-- Chat will be dynamically added here -->
+      </div>
+  </div>
+    <div class="chatbot-footer">
+      
+        <input type="text" placeholder="Ask a question" id="chat-input">
+        <button id="send-button">Send</button>
+    </div>
+  </div>
+  
+      <!-- Footer -->
+      <footer>
+        <p>© 2024 ExoExplorer. All Rights Reserved.</p>
+      </footer>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="../js/script.js"></script>
+    <!-- <script src="../js/Barchart.js"></script> -->
+  </body>
+  </html>
+  

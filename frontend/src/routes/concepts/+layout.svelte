@@ -1,30 +1,39 @@
-<script>
+<script lang='ts'>
     //local components
-	import Navbar from "./components/navbar.svelte";
+	import Chatbot from "./components/chatbot.svelte";
+  import Navbar from "./components/navbar.svelte";
 	import Sidebar from "./components/sidebar.svelte";
 
+
+  let hidden: Boolean = false
+  const toggleHidden = (hidden)=>{
+    hidden = hidden
+  }
 
 </script>
 
 <section class='concepts-container bg-white'>
     <Navbar />
-    <Sidebar />
-    <div class="container">
-        <slot />
-    </div>
+    <div class="content-container">
+      <Sidebar on:toggle={toggleHidden} />
+        <div class="container">
+          <slot />
+        </div>
+      </div>
+      <Chatbot {hidden} />
     
     
     <!-- Footer -->
     <footer>
         <p>© 2024 ExoExplorer. All Rights Reserved.</p>
     </footer>      
-</section>
+  </section>
 
 <style>
     /* Global styles */
-    :global(main){
+    /* :global(main){
         position: relative;
-    }
+    } */
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -42,6 +51,10 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .content-container {
+    display: flex;
+    min-height: calc(100vh - 100px); /* Adjust based on your header height */
   }
   .example {
     font-style: italic;

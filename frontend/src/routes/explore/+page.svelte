@@ -4,16 +4,20 @@
     import * as THREE from 'three'
     import {gsap} from 'gsap'
 	import Planet from "../components/planet.svelte";
+	import ExplainPlanet from "../components/explainPlanet.svelte";
 
     export let canvas;
+    export let data;
+    let planetsData = data.prop?.planetsData
+    // console.log(planetData[0])
     let planets;
+    let planetData;
     let scene: any;
-    let  camera;
+    let camera;
     let renderer;
     let explain: boolean = false
 
    $: planets = $planetsStore
-   $: console.log(planets)
    scene = $sceneStore
    camera = $cameraStore
    renderer = $rendererStore
@@ -36,7 +40,7 @@
     }
    }
    
-   function focusOnPlanet(planet) {
+   async function focusOnPlanet(planet, index:number) {
     if (camera.parent){
       camera.removeFromParent()
     }
@@ -55,6 +59,7 @@
     });
 
     planet.obj.add(camera)
+    planetData = planetsData[index]
     explain = true
   }
 
@@ -76,8 +81,8 @@ if(canvas){
         <div>
           <h1 class='text-center font-mono font-semibold text-[20px]'>Planets in the Solar System:</h1>
           <ul class='m-2 items-center'>
-            {#each planets as planet}
-              <Planet {planet} on:focus={(event)=> focusOnPlanet(event.detail.planet)} />
+            {#each planets as planet, index}
+              <Planet {planet} {index} on:focus={(event)=> focusOnPlanet(event.detail.planet, event.detail.index)} />
             {/each}
           </ul>
         </div>
@@ -92,7 +97,7 @@ if(canvas){
     
     <section class='explain-nav'>
       {#if explain}
-        <p class='bg-white'>as</p>
+        <ExplainPlanet {planetData} />
       {:else}
         <h1 class='text-center text-[#f7e3e3] font-mono font-semibold text-[20px]'>View a Planet to learn more</h1>
       {/if}

@@ -1,15 +1,21 @@
+<script>
+	import { onMount } from "svelte";
+    export let hidden
+
+</script>
+
 <!-- Optional Background overlay when chatbot is open -->
-<div id="overlay" class="hidden"></div>
+<div id="overlay" class="{hidden ? 'hidden' : ''}"></div>
     
 
 <!-- Chatbot Panel (Initially hidden) -->
-<div id="chatbot-panel" class="hidden">
+<div id="chatbot-panel" class="{hidden ? 'hidden' : ''}">
     <div class="chatbot-header">
         <h2>Ask ExoExplorer Bot</h2>
         <button id="close-chatbot">X</button>
 </div>
 
-<div class="chatbot-body">
+<div class="{hidden ? 'hidden' : ''}">
     <div id="chat-output">
         <p>Hello, I'm here to help with your questions.</p>
         <!-- Chat will be dynamically added here -->

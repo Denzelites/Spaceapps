@@ -1,2 +1,6 @@
+<script lang='ts'>
+	import Overview from "./components/overview.svelte";
 
-<p>asas</p>
+
+</script>
+<Overview />
