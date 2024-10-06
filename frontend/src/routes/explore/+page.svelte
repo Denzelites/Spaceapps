@@ -79,7 +79,6 @@ if(canvas){
     <section class='explore-nav'>
         {#if planets}
         <div>
-          <h1 class='text-center font-mono font-semibold text-[20px]'>Planets in the Solar System:</h1>
           <ul class='m-2 items-center'>
             {#each planets as planet, index}
               <Planet {planet} {index} on:focus={(event)=> focusOnPlanet(event.detail.planet, event.detail.index)} />
@@ -87,7 +86,7 @@ if(canvas){
           </ul>
         </div>
         <div>
-          <h1 class='text-center font-mono font-semibold text-[20px]'>Some planets outside our Solar System:</h1>
+          <h1 class='text-center text-white font-mono font-semibold text-[20px]'>Some planets outside our Solar System:</h1>
           <ul class='m-2 items-center'>
             
           </ul>
