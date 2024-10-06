@@ -1,3 +1,11 @@
+<script lang='ts'>
+  import { conceptsIndex } from "../../context/store";
+
+  const setIndex = (value)=>{
+    $conceptsIndex = value
+    console.log($conceptsIndex)
+  }
+</script>
 
 <div class="container">
     <h1>Brief Overview</h1>
@@ -5,11 +13,11 @@
       These planets vary greatly in size, composition, and orbit. Join us on an interstellar adventure to learn about:</p>
     <p>Get ready to go on an ex-citing journey across the galaxy (and maybe even beyond!) as we learn about:</p>
     <ul>
-        <li><a href="types.html">Types of Exoplanets</a></li>
-        <li><a href="naming.html">How We Name Them</a></li>
-        <li><a href="methods.html">How We Find Them</a></li>
-        <li><a href="found.html">Which Ones We've Found</a></li>
-        <li><a href="why-search.html">Why Even Look For Them?</a></li>
+        <li><p class='cursor-pointer' on:click={()=>{setIndex(1)}}>Types of Exoplanets</p></li>
+        <li><p class='cursor-pointer' on:click={()=>{setIndex(2)}}>How We Name Them</p></li>
+        <!-- <li><a href="">How We Find Them</a></li>
+        <li><a href="">Which Ones We've Found</a></li>
+        <li><a href="">Why Even Look For Them?</a></li> -->
     </ul>
     <div id="chart"></div>
     <div id="grouping-options">
