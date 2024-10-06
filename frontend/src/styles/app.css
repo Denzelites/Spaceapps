@@ -138,11 +138,13 @@
     }
 
     .explore-nav {
-        @apply h-[500px] w-60 shadow-lg rounded-sm shadow-[#413f3f] col-span-3 row-start-1 row-span-full bg-[#abd] text-black p-4 bg-gradient-to-tr from-blue-500 via-teal-600 to-emerald-300 overflow-y-auto
+        @apply w-60 shadow-lg rounded-sm col-span-3 row-start-1 row-span-full
     }
 
     .explain-nav {
-        @apply col-start-11 col-span-2 row-start-1 bg-gradient-to-br from-white to-black overflow-y-auto h-[500px]
+        @apply col-start-10 col-span-3 row-start-1 text-white p-4 pr-6 rounded mr-4;
+        background-color: rgb(255, 255, 255, 0.25);
+        backdrop-filter: blur(30px)
     }
 
     /* pages containerrs */
