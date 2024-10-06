@@ -18,3 +18,9 @@ export function initCamera() {
 }
 
 export { cameraStore };
+
+export let conceptsIndex = writable(0)
+
+export const setPageIndex = (input: number)=>{
+  conceptsIndex.set((value)=>{value = input})
+}

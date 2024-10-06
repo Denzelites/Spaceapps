@@ -1,6 +1,7 @@
 <script lang='ts'>
   let chatbotbtn;
   import { createEventDispatcher } from "svelte";
+  import { conceptsIndex } from "../../context/store";
   let dispatch = createEventDispatcher()
 
   let hidden: Boolean = true
@@ -9,16 +10,21 @@
     dispatch('toggleChat',
     {'hidden':hidden})
   }
+
+  const setIndex = (value)=>{
+    $conceptsIndex = value
+    console.log($conceptsIndex)
+  }
 </script>
 
     <aside class="sidebar">
         <ul>
-            <li><a href="/concepts/overview">Brief Overview</a></li>
-            <li><a href="concepts_types.html">Types of Exoplanets</a></li>
-            <li><a href="concepts_namesys.html">Naming Systems</a></li>
-            <li><a href="concepts_discovery.html">Methods of Discovering Exoplanets</a></li>
-            <li><a href="concepts_timeline.html">Timeline & Important Discoveries</a></li>
-            <li><a href="concepts_goals.html">NASA's Goals</a></li>
+            <li><p class='cursor-pointer' on:click={()=>{setIndex(0)}} >Brief Overview</p></li>
+            <li><p class='cursor-pointer' on:click={()=>{setIndex(1)}} >Types of Exoplanets</p></li>
+            <li><p class='cursor-pointer' on:click={()=>{setIndex(2)}}>Naming Systems</p></li>
+            <!-- <li><a >Methods of Discovering Exoplanets</a></li>
+            <li><a >Timeline & Important Discoveries</a></li>
+            <li><a >NASA's Goals</a></li> -->
         </ul>
     </aside>
     

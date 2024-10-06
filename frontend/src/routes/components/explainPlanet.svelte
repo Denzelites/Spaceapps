@@ -4,7 +4,7 @@
 </script>
 
     <div class='explain-head'>
-        <h2>{planetData.name}</h2>
+        <h2 class='text-center font-semibold text-lg'>{planetData.name}</h2>
     </div>
     <div class='explain-body'>
         <p>{planetData.description}</p>
