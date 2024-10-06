@@ -2,7 +2,7 @@
 @tailwind utilities;
 @tailwind base;
 
-@layer components{
+@layer components {
     body {
         overflow-x: hidden;
 
@@ -14,11 +14,21 @@
 
     .navbar {
         background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(30px);
-        /* background-color: none; */
+        /* backdrop-filter: blur(30px); */
         position: fixed;
         top: 0;
-        z-index: 30;
+    }
+
+    /* don't ask how i did this, it's a workaround i found online, cause the back-drop doesn't work on parent and child simultaneously  */
+    .navbar::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        backdrop-filter: blur(30px);
+        z-index: -1;
     }
 
     .logo {
@@ -29,13 +39,17 @@
         height: 100%;
         /* width: 100%; */
     }
-    
+
     .left-nav-sec {
         height: 100%;
     }
 
-    ul>* {
-        @apply hover:text-blue-500 hover:transition-colors
+    .dark-overlay.active {
+        display: block
+    }
+
+    .dark-overlay {
+        display: none
     }
 
     ul>* {
@@ -52,9 +66,7 @@
     }
 
     .header-container {
-        @apply col-span-12 flex flex-col items-start ml-16 gap-4;
-        padding-top: 8.5rem;
-        text-align: left;
+        @apply col-span-12 flex flex-col items-start ml-16 gap-4 pt-[8.5rem];
     }
 
     .header-container h2 {
@@ -65,30 +77,80 @@
         @apply text-blue-500 text-[24px]
     }
 
+    .open {
+        display: none;
+    }
+
+    .close {
+        display: none;
+    }
+
+    @media screen and (max-width:768px) {
+        .header-container {
+            @apply items-center ml-0
+        }
+
+        ul {
+            @apply flex-col mt-16 absolute top-0 right-0 h-screen w-[40%];
+
+        }
+
+        ul {
+            background-color: rgba(255, 255, 255, 0.1);
+            isolation: isolate;
+            /* background-color: red; */
+            backdrop-filter: blur(20px);
+            transform: translateX(100%);
+            transition: transform 150ms linear;
+            display: none;
+        }
+
+        ul>li {
+            width: 100%;
+        }
+
+
+        .open.active {
+            display: block;
+        }
+
+        .close.active {
+            display: block;
+        }
+
+
+        ul.active {
+            display: block;
+            transform: translateX(0);
+        }
+
+        body.no-scroll {
+            overflow-y: hidden;
+        }
+    }
 
     .carousel-container {
         @apply col-start-3 col-span-8 m-3
     }
 
-    .explore-container{
+    .explore-container {
         @apply overflow-y-hidden
     }
 
-    .explore-nav{
-        @apply h-[500px] w-60 shadow-lg rounded-sm shadow-[#413f3f] col-span-3 row-start-1 row-span-full bg-[#abd] text-black
-        p-4 bg-gradient-to-tr from-blue-500 via-teal-600 to-emerald-300 overflow-y-auto
+    .explore-nav {
+        @apply h-[500px] w-60 shadow-lg rounded-sm shadow-[#413f3f] col-span-3 row-start-2 row-span-full bg-[#abd] text-black p-4 bg-gradient-to-tr from-blue-500 via-teal-600 to-emerald-300 overflow-y-auto
     }
 
-    .explain-nav{
-        @apply col-start-11 col-span-2 row-start-1 bg-gradient-to-br from-black to-white
-    } 
+    .explain-nav {
+        @apply col-start-11 col-span-2 row-start-2 bg-gradient-to-br from-black to-white
+    }
 
     /* pages containerrs */
-    .visualization-container{
+    .visualization-container {
         @apply col-span-12 min-h-[calc(100vh-20px)] bg-black w-full
     }
 
-    .concepts-container{
+    .concepts-container {
         @apply col-span-full min-h-[calc(100vh-20px)] bg-white w-full
     }
 }

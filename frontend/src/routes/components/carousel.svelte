@@ -6,8 +6,8 @@
   // Array of slide content (you can replace with actual content later)
   const slides = [
     {'img':'carousel-1.jpg', 'text':'Demystify exoplanets and understand what makes them so exiting', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
-    {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
-    {'img':'carousel-1.jpg', 'text':'Discover and learn more about planets beyond the barycentric orbit', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
+    {'img':'carousel-1.jpg', 'text':'Learn how we name them, what types exist, how many we\'ve discovered and how we discovered them and what NASA\'s reasons for looking for exoplanets are', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
+    {'img':'carousel-1.jpg', 'text':"Use charts and graphs to understand and visualize trends in the discovery and frequency of certain types of exoplanets", "link":"explore", "link_text":"explore the stars", "arrow":"right-arrow.png"},
   ];
   let noOfSlides = slides.length
 
@@ -77,89 +77,91 @@
 </div>
 
 <style>
-.carousel {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-inner {
-  display: flex;
-  height: 100%; /* Fill the carousel height */
-  transition: transform 0.5s ease;
-  will-change: transform; /* Improve performance */
-}
-
-
-.carousel-item {
-  background-color: rgba(255, 255, 255, 0.251);
-  backdrop-filter: blur(15px);
-  padding: 0.5rem 0.5rem 2.5rem 0.5rem;
+  .carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    height: 100%; /* Fill the carousel height */
+    transition: transform 0.5s ease;
+    will-change: transform; /* Improve performance */
+  }
+  
+  
+  .carousel-item {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    padding: 0.5rem 0.5rem 2.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1.5rem;
+    border-radius:5px;
+  }
+  
+  .carol-img {
+    border-radius:5px 5px 0 0;
+    max-width: 100%; /* Ensure image does not overflow */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    height: 70%;
+  }
+  .info-col{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap:1.5rem;
-  border-radius:5px
-}
-
-.carol-img {
-  border-radius:5px 5px 0 0;
-  max-width: 100%; /* Ensure image does not overflow */
-  object-fit: cover; /* Maintain aspect ratio and cover the area */
-  height: 70%;
-}
-.info-col{
-display: flex;
-flex-direction: column;
-align-items: center;
-gap:10px;
-position: relative;
-}
-.info-col > .right-arrow{
-position: absolute;
-left:0;
-cursor: pointer;
-width:40px;
-transform: rotateY(180deg);
-}
-.info-col > .left-arrow{
-position: absolute;
-right:0;
-cursor: pointer;
-width:40px;
-
-}
-.info-col div img{
-width:100%
-
-}
-.carousel-indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.indicator {
-  width: 12px;
-  height: 12px;
-  background-color: #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.indicator.active {
-  background-color: #333;
-}
-
-  .carol-btn{
-     @apply bg-blue-500;
-      color: #fefefe;
-      padding: .5rem;
-      font-size: 14px;
-      border-radius: 5px;
+  align-items: center;
+  gap:10px;
+  position: relative;
+  text-align: center;
   }
-</style> 
+  .info-col > .right-arrow{
+  position: absolute;
+  left:0;
+  bottom:0;
+  cursor: pointer;
+  width:40px;
+  transform: rotateY(180deg);
+  }
+  .info-col > .left-arrow{
+  position: absolute;
+  right:0;
+  bottom:0;
+  cursor: pointer;
+  width:40px;
+  }
+  .info-col div img{
+  width:100%
+  
+  }
+  .carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .indicator {
+    width: 12px;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .indicator.active {
+    background-color: #333;
+  }
+  
+    .carol-btn{
+       @apply bg-blue-500;
+        color: #fefefe;
+        padding: .5rem;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+  </style> 
