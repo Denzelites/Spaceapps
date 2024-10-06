@@ -142,7 +142,7 @@
     }
 
     .explain-nav {
-        @apply col-start-11 col-span-2 row-start-1 text-white p-4 pr-8 rounded;
+        @apply col-start-10 col-span-3 row-start-1 text-white p-4 pr-6 rounded mr-4;
         background-color: rgb(255, 255, 255, 0.25);
         backdrop-filter: blur(30px)
     }
