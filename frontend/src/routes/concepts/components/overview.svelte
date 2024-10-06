@@ -9,9 +9,8 @@
 
 <div class="container">
     <h1>Brief Overview</h1>
-    <p> Exoplanets are planets that exist beyond our solar system. While most of them orbit other stars, some roam freely in space without a star to call home. We’ve discovered over 5,600 exoplanets so far, but scientists believe that billions more are waiting to be found. 
-      These planets vary greatly in size, composition, and orbit. Join us on an interstellar adventure to learn about:</p>
-    <p>Get ready to go on an ex-citing journey across the galaxy (and maybe even beyond!) as we learn about:</p>
+    <p>Okay, exoplanets, what are they, how can they be found, what makes them so cool? An exoplanet is any planet beyond our solar system. Most of them orbit other stars, but some free-floating exoplanets, called rogue planets, are untethered to any star. We’ve confirmed more than 5,600 exoplanets out of the billions that we believe exist. Get ready to go on an ex-citing
+       journey across the galaxy (and maybe even beyond!) as we learn about exoplanets and their:</p>
     <ul>
         <li><p class='cursor-pointer' on:click={()=>{setIndex(1)}}>Types of Exoplanets</p></li>
         <li><p class='cursor-pointer' on:click={()=>{setIndex(2)}}>How We Name Them</p></li>
