@@ -14,13 +14,9 @@
     generateColor(planet)
 </script>
 
-<section class='planet-container'>
-    <div class='planet-wrapper flex flex-col justify-center'>
-        <div>
-            <h2 class='planet-head'>{planet.name}</h2>
-        </div>
-        <button class='p-2 border text-sm bg-[red] hover: bg-gradient-to-r hover: from-blue-200 via-purple-300
-         to-yellow-100 border-blue-100 text-center' on:click={() => focusPlanet(planet)}>Click to view {planet.name}</button>
+<section class='planet-container mb-3 ml-2 odd:translate-x-12'>
+    <div class='planet-wrapper flex flex-col gap-4'>
+        <button class='text-[1.3rem] capitalize border-[1px] border-blue-500 border-solid rounded-lg py-2 text-white hover:bg-blue-500' on:click={() => focusPlanet(planet)}>{planet.name}</button>
     </div>
 </section>
 
@@ -32,8 +28,11 @@
         text-transform: capitalize;
     }
 
-    /* .planet-wrapper{
-
-    } */
-
+    .planet-wrapper>button{
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(30px);
+    }
+    .planet-wrapper>button:hover{
+        @apply bg-blue-500 transition-colors duration-150 text-black
+    }
 </style>
