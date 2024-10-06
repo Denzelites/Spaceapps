@@ -5,9 +5,9 @@
 
   // Array of slide content (you can replace with actual content later)
   const slides = [
-    {'img':'carousel-1.jpg', 'text':'Demystify exoplanets and understand what makes them so exiting', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
-    {'img':'carousel-1.jpg', 'text':'Learn how we name them, what types exist, how many we\'ve discovered and how we discovered them and what NASA\'s reasons for looking for exoplanets are', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
-    {'img':'carousel-3.jpg', 'text':"Use charts and graphs to understand and visualize trends in the discovery and frequency of certain types of exoplanets", "link":"explore", "link_text":"explore the stars", "arrow":"right-arrow.png"},
+    {'img':'carousel-1.jpg', 'text':'Demystify exoplanets and understand what makes them so exiting', "arrow":"right-arrow.png", "link":"explore", "link_text":"Explore the stars"},
+    {'img':'carousel-1.jpg', 'text':'Learn how we name them, what types exist, how many we\'ve discovered and how we discovered them and what NASA\'s reasons for looking for exoplanets are', "arrow":"right-arrow.png", "link":"concepts", "link_text":"Learn about the planets"},
+    {'img':'carousel-3.jpg', 'text':"Use charts and graphs to understand and visualize trends in the discovery and frequency of certain types of exoplanets", "link":"visual", "link_text":"Use the power of data", "arrow":"right-arrow.png"},
   ];
   let noOfSlides = slides.length
 
@@ -100,12 +100,13 @@
     justify-content: space-between;
     gap:1.5rem;
     border-radius:5px;
+    /* width: 100%; */
   }
   
   .carol-img {
     border-radius:5px 5px 0 0;
     max-width: 100%; /* Ensure image does not overflow */
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    object-fit: cover; 
     height: 70%;
   }
   .info-col{
