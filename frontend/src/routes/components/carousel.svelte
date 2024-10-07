@@ -34,7 +34,7 @@
   // Auto-advance every 5 seconds
   const interval = setInterval(() => {
     currentIndex = (currentIndex + 1) % totalSlides;
-  }, 15000);
+  }, 10000);
 
   // Cleanup interval on component destroy
   onDestroy(() => {
