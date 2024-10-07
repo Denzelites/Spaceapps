@@ -33,3 +33,21 @@
 </div>
 
  <a href="quiz.html?title=overview" class="quiz-button">Take a quiz</a>
+
+ <style>
+    .quiz-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #1f2937;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+.quiz-button:hover {
+    background-color: #218838;
+}
+ </style>

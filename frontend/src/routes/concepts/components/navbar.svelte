@@ -1,10 +1,10 @@
 <section id="edu-content">
     <nav>
       <ul>
-        <li><a href="visual.html">Data visualizations</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="concepts.html">Concepts</a></li>
-        <li><a href="resources.html">Additional Educational Resources</a></li>
+        <li><a href="/visual">Data visualizations</a></li>
+        <li><a href="/">Quiz</a></li>
+        <li><a href="/">Concepts</a></li>
+        <li><a href="/https://openexoplanetcatalogue.com/">Additional Educational Resources</a></li>
       </ul>
     </nav>
 </section>

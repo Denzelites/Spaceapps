@@ -22,6 +22,8 @@
             <li><p class='cursor-pointer' on:click={()=>{setIndex(0)}} >Brief Overview</p></li>
             <li><p class='cursor-pointer' on:click={()=>{setIndex(1)}} >Types of Exoplanets</p></li>
             <li><p class='cursor-pointer' on:click={()=>{setIndex(2)}}>Naming Systems</p></li>
+            <li><p class='cursor-pointer' on:click={()=>{setIndex(3)}}>Methods of discovering planets</p></li>
+            <li><p class='cursor-pointer' on:click={()=>{setIndex(4)}}>NASA’s Goals</p></li>
             <!-- <li><a >Methods of Discovering Exoplanets</a></li>
             <li><a >Timeline & Important Discoveries</a></li>
             <li><a >NASA's Goals</a></li> -->

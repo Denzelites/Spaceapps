@@ -87,6 +87,7 @@ if(canvas){
         </div>
         <div>
           <h1 class='text-center text-white font-mono font-semibold text-[20px]'>Some planets outside our Solar System:</h1>
+          <p class='text-center text-white font-mono font-semibold text-[20px]'>Coming soon</p>
           <ul class='m-2 items-center'>
             
           </ul>
