@@ -101,7 +101,7 @@
     justify-content: space-between;
     border-radius:5px;
     width:100%;
-    height: 485px;
+    height: 475px;
   }
   
   .carol-img {
@@ -159,7 +159,7 @@
   }
   
     .carol-btn{
-       @apply bg-blue-500;
+       @apply bg-blue-700;
         color: #fefefe;
         padding: .5rem;
         font-size: 14px;

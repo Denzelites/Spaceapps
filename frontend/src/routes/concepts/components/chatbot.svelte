@@ -11,7 +11,7 @@
 <!-- Chatbot Panel (Initially hidden) -->
 <div id="chatbot-panel" class="{hidden ? 'hidden' : ''}">
     <div class="chatbot-header">
-        <h2>Ask ExoExplorer Bot</h2>
+        <h2>Hi, I'm ExoAI</h2>
         <button id="close-chatbot">X</button>
 </div>
 
