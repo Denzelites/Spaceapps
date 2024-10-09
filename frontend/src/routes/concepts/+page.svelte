@@ -2,6 +2,7 @@
 	import Overview from "./components/overview.svelte";
 	import { conceptsIndex } from "../context/store";
 	import Goals from "./components/goals.svelte";
+	import Method from "./components/method.svelte";
 	import Types from "./components/types.svelte";
 	import Namesys from './components/namesys.svelte';
 
@@ -14,6 +15,8 @@
 		Overview,
 		Types,
 		Namesys,
+		Method,
+		Goals,
 	]
 </script>
 

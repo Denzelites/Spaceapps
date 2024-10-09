@@ -6,14 +6,9 @@
   // Array of slide content (you can replace with actual content later)
   const slides = [
     {'img':'carousel-1.jpg', 'text':'Demystify exoplanets and understand what makes them so exiting', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
-    {'img':'carousel-1.jpg', 'text':'Learn how we name them, what types exist, how many we\'ve discovered and how we discovered them and what NASA\'s reasons for looking for exoplanets are', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
-    {'img':'carousel-1.jpg', 'text':"Use charts and graphs to understand and visualize trends in the discovery and frequency of certain types of exoplanets", "link":"explore", "link_text":"explore the stars", "arrow":"right-arrow.png"},
+    {'img':'carousel-2.jpeg', 'text':'Learn how we name them, what types exist, how many we\'ve discovered and how we discovered them and what NASA\'s reasons for looking for exoplanets are', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
+    {'img':'carousel-3.png', 'text':"Use charts and graphs to understand and visualize trends in the discovery and frequency of certain types of exoplanets", "link":"explore", "link_text":"explore the stars", "arrow":"right-arrow.png"},
   ];
-  // const slides = [
-  //   {'img':'carousel-1.jpg', 'text':'Demystify exoplanets and understand what makes them so exiting', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
-  //   {'img':'carousel-1.jpg', 'text':'Learn how we name them, what types exist, how many we\'ve discovered and how we discovered them and what NASA\'s reasons for looking for exoplanets are', "arrow":"right-arrow.png", "link":"explore", "link_text":"explore the stars"},
-  //   {'img':'carousel-3.jpg', 'text':"Use charts and graphs to understand and visualize trends in the discovery and frequency of certain types of exoplanets", "link":"explore", "link_text":"explore the stars", "arrow":"right-arrow.png"},
-  // ];
   let noOfSlides = slides.length
 
   // Change slide based on index
@@ -39,7 +34,7 @@
   // Auto-advance every 5 seconds
   const interval = setInterval(() => {
     currentIndex = (currentIndex + 1) % totalSlides;
-  }, 5000);
+  }, 10000);
 
   // Cleanup interval on component destroy
   onDestroy(() => {
@@ -90,9 +85,10 @@
   
   .carousel-inner {
     display: flex;
-    height: 100%; /* Fill the carousel height */
+    /* height: 50%;  */
     transition: transform 0.5s ease;
     will-change: transform; /* Improve performance */
+    width:100%;
   }
   
   
@@ -103,16 +99,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap:1.5rem;
     border-radius:5px;
-    /* width: 100%; */
+    width:100%;
+    height: 475px;
   }
   
   .carol-img {
     border-radius:5px 5px 0 0;
     max-width: 100%; /* Ensure image does not overflow */
-    object-fit: cover; 
-    height: 70%;
+    height: 75%;
   }
   .info-col{
   display: flex;
@@ -164,7 +159,7 @@
   }
   
     .carol-btn{
-       @apply bg-blue-500;
+       @apply bg-blue-700;
         color: #fefefe;
         padding: .5rem;
         font-size: 14px;

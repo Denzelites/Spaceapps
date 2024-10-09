@@ -124,15 +124,15 @@ canvas{
 }
 
 main{
+  @apply mt-16;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   position: relative;
   z-index: 99;
-  margin: 100px auto 0px;
+  /* margin: 100px auto 0px; */
   width: 100vw;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding-bottom: 20px;
   row-gap: 300px;
 }
 </style>

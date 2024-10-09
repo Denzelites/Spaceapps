@@ -9,18 +9,23 @@
     }
 
     .navbar {
-        @apply h-16 col-span-12 w-full flex items-center justify-evenly text-white
+        @apply h-[4.3rem] col-span-12 w-full flex items-center justify-evenly text-white
     }
 
     .navbar {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: transparent;
         /* backdrop-filter: blur(30px); */
         position: fixed;
         top: 0;
     }
 
+    .navbar {
+        /* @apply mix-blend-difference */
+    }
+
     /* don't ask how i did this, it's a workaround i found online, cause the back-drop doesn't work on parent and child simultaneously  */
     .navbar::before {
+        background-color: rgba(255, 255, 255, 0.1);
         content: '';
         position: absolute;
         width: 100%;
@@ -53,7 +58,7 @@
     }
 
     ul>* {
-        @apply hover:text-blue-500 hover:transition-colors
+        @apply hover:text-blue-700 hover:transition-colors
     }
 
     .navbar h2 {
@@ -66,7 +71,7 @@
     }
 
     .header-container {
-        @apply col-span-12 flex flex-col items-start ml-16 gap-4 pt-[8.5rem];
+        @apply col-span-12 flex flex-col items-start ml-16 gap-4 pt-[10rem];
     }
 
     .header-container h2 {
@@ -74,7 +79,7 @@
     }
 
     .header-container p {
-        @apply text-blue-500 text-[24px]
+        @apply text-blue-700 text-[24px]
     }
 
     .open {
@@ -134,7 +139,7 @@
     }
 
     .explore-container {
-        @apply overflow-y-hidden
+        @apply mt-8
     }
 
     .explore-nav {

@@ -32,3 +32,9 @@ function updateBodyOverflow() {
     }
   }
 </script>
+
+<style>
+  nav ul{
+    /* mix-blend-mode: difference; */
+  }
+</style>

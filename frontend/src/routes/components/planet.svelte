@@ -16,7 +16,7 @@
 
 <section class='planet-container mb-3 ml-2 odd:translate-x-12'>
     <div class='planet-wrapper flex flex-col gap-4'>
-        <button class='text-[1.3rem] capitalize border-[1px] border-blue-500 border-solid rounded-lg py-2 text-white hover:bg-blue-500' on:click={() => focusPlanet(planet)}>{planet.name}</button>
+        <button class='text-[1.3rem] capitalize border-[1px] border-blue-700 border-solid rounded-lg py-[10px] text-white hover:bg-blue-700' on:click={() => focusPlanet(planet)}>{planet.name}</button>
     </div>
 </section>
 
@@ -33,6 +33,6 @@
         backdrop-filter: blur(30px);
     }
     .planet-wrapper>button:hover{
-        @apply bg-blue-500 transition-colors duration-150 text-black
+        @apply bg-blue-700 transition-colors duration-150 text-black
     }
 </style>

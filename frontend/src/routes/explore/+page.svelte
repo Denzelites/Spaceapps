@@ -87,6 +87,7 @@ if(canvas){
         </div>
         <div>
           <h1 class='text-center text-white font-mono font-semibold text-[20px]'>Some planets outside our Solar System:</h1>
+          <p class='text-center text-white font-mono font-semibold text-[20px]'>Coming soon</p>
           <ul class='m-2 items-center'>
             
           </ul>
@@ -98,7 +99,7 @@ if(canvas){
       {#if explain}
         <ExplainPlanet {planetData} />
       {:else}
-        <h1 class='text-center text-[#f7e3e3] font-mono font-semibold text-[20px]'>View a Planet to learn more</h1>
+        <h1 class='text-center text-white font-semibold text-[20px] text-start'>Click on a Planet name to learn more</h1>
       {/if}
     </section>
 
