@@ -17,15 +17,17 @@
   }
 </script>
 
-    <aside class="sidebar">
-        <ul>
+    <aside class="flex flex-col justify-between sidebar">
+      <ul>
             <li><p class='cursor-pointer' on:click={()=>{setIndex(0)}} >Brief Overview</p></li>
             <li><p class='cursor-pointer' on:click={()=>{setIndex(1)}} >Types of Exoplanets</p></li>
             <li><p class='cursor-pointer' on:click={()=>{setIndex(2)}}>Naming Systems</p></li>
-            <!-- <li><a >Methods of Discovering Exoplanets</a></li>
-            <li><a >Timeline & Important Discoveries</a></li>
-            <li><a >NASA's Goals</a></li> -->
+            <li><p class='cursor-pointer' on:click={()=>{setIndex(3)}}>Discovery methods</p></li>
+            <li><p class='cursor-pointer' on:click={()=>{setIndex(4)}}>NASA’s Goals</p></li>
         </ul>
+        <footer class="flex-end text-white">
+          <p>© 2024 ExoExplorer. All Rights Reserved.</p>
+      </footer> 
     </aside>
     
     <div id="chatbot-button" bind:this={chatbotbtn} on:click={toggle}>
@@ -57,30 +59,32 @@
 .chatbot-text {
     margin-left: 10px;
 }
-    .content-container{
-      display: flex;
-      min-height: calc(100vh - 100px); /* Adjust based on your header height */
-    }
     
     .sidebar{
+      @apply bg-blue-700/65;
+      /* background-color: rgba(19, 51, 141, 0.95); */
+      backdrop-filter: blur(20px);
+      border-top:1px solid black;
       display:flex;
       align-items:space-between;
-      width: 250px;
-      background-color: #1f2937;
-      padding: 20px;
+      width: 275px;
+      padding: 20px 20px 10px;
+      position: sticky;
+      top:112px;
+      align-self: stretch;
+      height:calc(100vh - 112px)
     }
     
     .sidebar ul {
       list-style: none;
-      padding: 0;
     }
     
     .sidebar ul li {
-      margin: 15px 0;
+      margin: 25px 0;
     }
     
-    .sidebar ul li a {
-      color: #ffffff;
+    .sidebar ul li p{
+      color: white;
       text-decoration: none;
       font-size: 18px;
     }
