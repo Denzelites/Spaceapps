@@ -12,7 +12,7 @@
 
 </script>
 
-<section class='concepts-container bg-white'>
+<section class='concepts-container'>
     <Navbar />
     <div class="content-container">
       <Sidebar on:toggle={toggleHidden} />
@@ -21,50 +21,27 @@
         </div>
       </div>
       <Chatbot {hidden} />
-    
-    
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 ExoExplorer. All Rights Reserved.</p>
-    </footer>      
   </section>
 
 <style>
-    /* Global styles */
-    /* :global(main){
-        position: relative;
-    } */
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    margin: 20px;
-  }
-  p{ 
-  color: #333;
-  }
-  h1, h2 {
-    color: #333;
-  }
-  .container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+  .concepts-container{
+    background: none;
   }
   .content-container {
+    background: none;
     display: flex;
-    min-height: calc(100vh - 100px); /* Adjust based on your header height */
+    align-items: stretch;
+    width:100%;
   }
-  .example {
-    font-style: italic;
-    color: #555;
-  }
-  .note {
-    background-color: #e7f3fe;
-    padding: 10px;
-    border-left: 5px solid #2196F3;
-    margin: 10px 0;
+  .container {
+    padding-inline:20%;
+    margin:auto;
+    color:#333;
+    background-color: #eeeeee;
+    min-height:100vh;
+    padding-block:1rem;
+    
   }
     /* #quiz-container{
       background-color:brown;
@@ -84,17 +61,6 @@
         padding: 10px;
       }
     }
-     /* Footer */
-     footer {
-      background-color: #1f2937;
-      padding: 16px;
-      text-align: center;
-    }
-    
-    footer p {
-      font-size: 14px;
-      color: #ffffff;
-    }
     .quiz-button {
       display: inline-block;
       margin-top: 20px;
@@ -110,25 +76,5 @@
   .quiz-button:hover {
       background-color: #218838;
   }
-  #chart {
-    width: 800px;
-    height: 600px;
-  }
   
-  .bar {
-    fill: steelblue;
-  }
-  
-  .tooltip {
-    position: absolute;
-    text-align: center;
-    width: 200px;
-    height: auto;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
   </style>

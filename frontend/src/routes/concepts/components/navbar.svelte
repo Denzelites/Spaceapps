@@ -1,10 +1,9 @@
-<section id="edu-content">
-    <nav>
-      <ul>
-        <li><a href="/visual">Data visualizations</a></li>
+<section id="edu-content" class="sticky w-full top-[69px] mb-[5px] z-10">
+    <nav class="w-full">
+      <ul class="flex justify-end gap-8 bg-blue-700/65 backdrop-blur-lg list-none text-[18px] py-2 pr-8">
         <li><a href="/">Quiz</a></li>
-        <li><a href="/">Concepts</a></li>
-        <li><a href="/https://openexoplanetcatalogue.com/">Additional Educational Resources</a></li>
+        <li><a href="/">chatbot</a></li>
+        <li><a href="/https://openexoplanetcatalogue.com/">External Resources</a></li>
       </ul>
     </nav>
 </section>
@@ -12,11 +11,7 @@
 <style>
     /* Edu-content section */
     #edu-content nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: space-evenly;
-      padding: 16px;
-      background-color: #1f2937;
+      /* background-color: #1f2937; */
     }
     
     #edu-content nav ul li a {
@@ -26,6 +21,6 @@
     }
     
     #edu-content nav ul li a:hover {
-      color: #007bff;
+      @apply text-blue-700;
     }
 </style>
